@@ -1,0 +1,28 @@
+@use "../../mixins" as *;
+@use "../../presets" as *;
+
+.post-topic {
+  position: relative;
+
+  &__link {
+
+  }
+
+  &__image {
+    @include abs-position;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  &__caption {
+  }
+
+}
+
+@for $i from 1 through 6 {
+  .post-topic:nth-of-type(#{$i}) {
+    grid-area: pt#{$i};
+  }
+}
