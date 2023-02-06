@@ -82,3 +82,11 @@ color: $color-light;
   &--light {
   }
 }
+
+h3 {
+  letter-spacing: 0.05em;
+  font-family: $font-header;
+  font-size: 1.125rem;
+  // line-height: 1.2em;
+  color: $color-gray;
+}

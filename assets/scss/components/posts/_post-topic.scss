@@ -2,21 +2,39 @@
 @use "../../presets" as *;
 
 .post-topic {
-  position: relative;
 
   &__link {
-
+  display: grid;
+  height: 100%;
+  grid-template-rows: 300px 1fr;
+  background-color: lighten($color-gray-light, 5%);
   }
 
   &__image {
-    @include abs-position;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
   }
 
   &__caption {
+
+    display: grid;
+    align-content: center;
+
+    padding: $gap;
+
+    h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      @include lg-min {
+        font-size: 1rem;
+      }
+    }
+
   }
 
 }
