@@ -3,28 +3,62 @@
 
 .post-topic {
 
+
   &__link {
+
   display: grid;
   height: 100%;
   grid-template-rows: 300px 1fr;
+  overflow: hidden;
   background-color: lighten($color-gray-light, 5%);
+  transition: 1s;
+
+  &:hover {
+
+    background-color: darken($color-gray-light, 5%);
+
+    .post-topic__image img {
+      transform: scale(1.1);
+    }
+
+    h3 {
+      color: $color-primary;
+    }
+
+    p {
+      color: $color-primary;
+    }
+
+  }
+
   }
 
   &__image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: $color-primary;
+
+
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
   }
 
   &__caption {
 
+
     display: grid;
     align-content: center;
-
     padding: $gap;
 
     h3 {
-      margin-top: 0;
       text-align: center;
     }
 

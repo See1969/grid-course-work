@@ -20,6 +20,7 @@
 
   &__container {
     @extend %container;
+
   }
 
   &__content {
@@ -47,5 +48,19 @@
     }
   }
 
-  &__actions {}
+  &__actions {
+    @include sm-min {
+    display: flex;
+    justify-content: center;
+  }
+
+    .btn--primary {
+
+      @include sm {
+        min-width: 100%;
+      }
+    }
+
+  }
+
 }
