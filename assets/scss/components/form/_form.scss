@@ -2,8 +2,8 @@
 @use "../../mixins" as *;
 
 .form {
-
   padding: $gap-lg 0;
+
   background-color: $color-primary;
 
   &__title {
@@ -11,19 +11,15 @@
   }
 
   &__container {
+    display: grid;
 
     @extend %container;
-    display: grid;
     gap: $gap;
-
     @include md-min {
       grid-template-columns: repeat(3, 1fr);
     }
-
     @include md-sm {
       grid-template-columns: repeat(2, 1fr);
     }
-
   }
-
 }

@@ -3,90 +3,94 @@
 
 .header-navbar {
   &__btn {
+    position: relative;
+
     width: 30px;
     height: 22.5px;
-    position: relative;
     margin-left: auto;
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
+
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
 
     @include md-min {
       display: none;
     }
 
-  &-row {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: $color-light;
-    border-radius: 3px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    &-row {
+      position: absolute;
+      left: 0;
 
-  &:nth-child(1) {
-    top: 0;
-}
-  &:nth-child(2),
-  &:nth-child(3) {
-    top: 9px;
-}
+      display: block;
 
-  &:nth-child(4) {
-    top: 18px;
-}
+      width: 100%;
+      height: 3px;
 
-}
-  &.active span {
-    &:nth-child(1) {
-      top: 9px;
-      width: 0;
-      left: 50%;
+      transition: 0.25s ease-in-out;
+      transform: rotate(0deg);
+
+      opacity: 1;
+      border-radius: 3px;
+      background: $color-light;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 9px;
+      }
+
+      &:nth-child(4) {
+        top: 18px;
+      }
     }
+    &.active span {
+      &:nth-child(1) {
+        top: 9px;
+        left: 50%;
 
-  &:nth-child(2) {
-    transform: rotate(45deg);
-  }
+        width: 0;
+      }
 
-  &:nth-child(3) {
-    transform: rotate(-45deg);
-  }
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
 
-  &:nth-child(4) {
-    top: 9px;
-    width: 0;
-    left: 50%;
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 9px;
+        left: 50%;
+
+        width: 0;
+      }
     }
-
   }
-
-}
 
   &__list {
-
     @include md-min {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
       justify-content: end;
-      gap: $gap;
 
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
       @include unlist(0 (-$gap-sm) 0 0);
     }
-
     @include md {
-      background-color: rgba($color-gray-dark, 0.9);
-
-      @include box-shadow;
-
       position: absolute;
       top: 100%;
       right: $gap;
+
       display: none;
+
       text-align: right;
 
+      background-color: rgba($color-gray-dark, 0.9);
+
+      @include box-shadow;
       @include unlist;
     }
   }
@@ -99,14 +103,15 @@
 
   &__link {
     display: block;
-    font-size: 1.125rem;
-    letter-spacing: 0.1em;
+
     transition: color 0.25s;
+    letter-spacing: 0.1em;
+
+    font-size: 1.125rem;
 
     @include md-min {
       padding: $gap $gap-sm;
     }
-
     @include md {
       padding: $gap-sm $gap;
     }

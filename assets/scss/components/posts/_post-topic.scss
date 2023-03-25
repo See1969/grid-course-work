@@ -2,59 +2,61 @@
 @use "../../presets" as *;
 
 .post-topic {
-
-
   &__link {
+    display: grid;
+    overflow: hidden;
 
-  display: grid;
-  height: 100%;
-  grid-template-rows: 300px 1fr;
-  overflow: hidden;
-  background-color: lighten($color-gray-light, 5%);
-  transition: 1s;
+    height: 100%;
 
-  &:hover {
+    transition: 1s;
 
-    background-color: darken($color-gray-light, 5%);
+    background-color: lighten($color-gray-light, 5%);
 
-    .post-topic__image img {
-      transform: scale(1.1);
+    grid-template-rows: 300px 1fr;
+
+    &:hover {
+      background-color: darken($color-gray-light, 5%);
+
+      .post-topic__image img {
+        transform: scale(1.1);
+      }
+
+      h3 {
+        color: $color-primary;
+      }
+
+      p {
+        color: $color-primary;
+      }
     }
-
-    h3 {
-      color: $color-primary;
-    }
-
-    p {
-      color: $color-primary;
-    }
-
-  }
-
   }
 
   &__image {
-
     display: flex;
-    justify-content: center;
-    transition: 0.5s;
     overflow: hidden;
+    justify-content: center;
+
+    transition: 0.5s;
+
     background-color: $color-primary;
 
 
 
     img {
       width: 100%;
-      object-fit: cover;
-      border-style: none;
-      transition: 0.5s;
-    }
 
+      transition: 0.5s;
+
+      border-style: none;
+
+      object-fit: cover;
+    }
   }
 
   &__caption {
     display: grid;
     align-content: center;
+
     padding: $gap;
 
 
@@ -64,13 +66,12 @@
 
     p {
       text-align: center;
+
       @include lg-min {
         font-size: 1rem;
       }
     }
-
   }
-
 }
 
 @for $i from 1 through 6 {

@@ -4,8 +4,10 @@
 
 .footer {
   padding: ($gap * 2.5) $gap ($gap * 3.5);
-  background-color: $color-primary;
+
   text-align: center;
+
+  background-color: $color-primary;
   &__container {
     @extend %container;
   }
@@ -14,44 +16,52 @@
 
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(51px, max-content));
 
     margin-bottom: 40px;
+
+    grid-template-columns: repeat(auto-fit, minmax(51px, max-content));
     &__link {
       display: block;
-      font-size: $gap-fs;
+
       padding: 10px;
-      font-weight: 400;
 
       transition: color 0.5s;
+
+      font-size: $gap-fs;
+      font-weight: 400;
       &:hover,
       &:focus {
         color: $color-accent;
       }
     }
     &::after {
-      content: "";
       position: absolute;
+      bottom: -20px;
+      left: calc(50% - 37.5px);
+
       width: 75px;
       height: 2px;
+
+      content: "";
+
       background-color: rgba($color-light, 0.1);
-      left: calc(50% - 37.5px);
-      bottom: -20px;
     }
   }
   &-content {
-
     span:nth-of-type(1) {
       margin-right: -0.5em;
+
       letter-spacing: 0.33em;
 
       color: $color-gray;
+
       font-weight: 100;
     }
     span:nth-of-type(2) {
       letter-spacing: 0.05em;
 
       color: $color-gray-light;
+
       font-weight: 700;
     }
   }
