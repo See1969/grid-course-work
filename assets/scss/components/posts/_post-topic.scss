@@ -46,17 +46,17 @@
     img {
       width: 100%;
       object-fit: cover;
+      border-style: none;
       transition: 0.5s;
     }
 
   }
 
   &__caption {
-
-
     display: grid;
     align-content: center;
     padding: $gap;
+
 
     h3 {
       text-align: center;

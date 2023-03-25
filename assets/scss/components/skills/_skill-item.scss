@@ -26,18 +26,19 @@
   }
 
   &__link {
+    font-family: $font-main;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 20px;
+    padding: $gap;
     transition: color 0.5s
   }
 
   &__image {
     @include abs-position;
     background-position: center;
-    background-repeat: no-repeat;
+
     background-size: cover;
     background-color: $color-primary;
     transition: transform 0.5s;
